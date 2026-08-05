@@ -14,6 +14,16 @@ The system sorts **14 fruits** (6 strawberries, 3 bananas, 5 tomatoes) into 3 ba
 - **Autonomous mode** - full vision-to-place pipeline: capture frame, detect fruits via HSV + shape classification, compute world coordinates, plan trajectories, execute pick-and-place cycle.
 - **Remote-control mode** - keyboard-driven teleoperation with real-time Cartesian jog and gripper control.
 
+---
+
+## Presentation video
+
+<video src="https://raw.githubusercontent.com/PieroJF/Robot-qarm-ruit-sorting/master/docs/presentation.mp4" controls width="100%"></video>
+
+Also on YouTube: https://www.youtube.com/watch?v=Ie2_2Y-FOgI
+
+---
+
 ## Architecture
 
 ```
