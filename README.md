@@ -18,9 +18,7 @@ The system sorts **14 fruits** (6 strawberries, 3 bananas, 5 tomatoes) into 3 ba
 
 ## Presentation video
 
-<video src="https://raw.githubusercontent.com/PieroJF/Robot-qarm-ruit-sorting/master/docs/presentation.mp4" controls width="100%"></video>
-
-Also on YouTube: https://www.youtube.com/watch?v=Ie2_2Y-FOgI
+[![Presentation video](https://img.youtube.com/vi/Ie2_2Y-FOgI/maxresdefault.jpg)](https://www.youtube.com/watch?v=Ie2_2Y-FOgI)
 
 ---
 
