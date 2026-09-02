@@ -1,3 +1,5 @@
+> **Archived development snapshot (2026-04-20).** Kept for history only. It describes the state of the project mid-sprint and is superseded by the root `README.md`, `LAB_RUNBOOK.md` and `docs/HANDOFF-2026-04-27.md`.
+
 # FinalProject_FruitSorting — Project Context Snapshot
 
 _Last updated: 2026-04-20. Deadline: **Fri 1 May 2026, 14:00**._

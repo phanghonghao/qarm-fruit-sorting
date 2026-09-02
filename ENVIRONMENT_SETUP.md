@@ -147,7 +147,7 @@ type: project
 
 **Why:** ~15 days to deadline; lab calibration is the critical-path bottleneck.
 
-**How to apply:** Resume by reading `PROGRESS.md` + `PROJECT_CONTEXT.md`. Never rewrite Python core — only wrap it.
+**How to apply:** Resume by reading `docs/archive/PROGRESS.md` + `docs/archive/PROJECT_CONTEXT.md` (archived snapshots). Never rewrite Python core — only wrap it.
 ```
 
 ### feedback_no_quarc.md

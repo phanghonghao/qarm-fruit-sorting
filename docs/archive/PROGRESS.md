@@ -1,9 +1,11 @@
+> **Archived development snapshot (2026-04-27).** Kept for history only. It describes the state of the project mid-sprint and is superseded by the root `README.md`, `LAB_RUNBOOK.md` and `docs/HANDOFF-2026-04-27.md`.
+
 # FruitSorting — Progress Snapshot
 
 **Last updated:** 2026-04-20
 **Deadline:** 2026-05-01 14:00 (Applied Robotics final, University of Birmingham)
 **Team:** Piero Flores · Zihen Huang · Ran Zhang · Yichang Chao
-**Working directory:** `C:\Users\Mugin\Downloads\Compressed\Nueva carpeta_2\FinalProject_FruitSorting`
+**Working directory:** `<repo-root>` (local Windows checkout)
 
 ---
 
@@ -18,9 +20,6 @@ Code-review of merge `c621600` (PR #3, "Applied robot vision") flagged regressio
 - HSV / shape thresholds in `fruit_detector.py` were tuned for the 2026-04-22 lighting and chessboard distance; needs lab confirmation under final-demo conditions.
 - Live D415 feed during pick (Patches: 2026-04-27): with arm + D415 + `main_final.py` running, click a fruit and confirm (a) the picker window keeps refreshing the live POV during the ~10 s arm motion, (b) the status overlay shows the FSM state transitioning GO_HOME → APPROACH → DESCEND → CLOSE_GRIPPER → ASCEND_PICK, (c) clicks during pick are ignored (no second pick queued), (d) after pick completes the window snaps back to the detection-overlay frame from `_refresh()`, (e) repeated picks don't leak threads — process should not accumulate camera handles. Failure modes to watch for: black frames (camera read race), Windows "Not Responding" on the OpenCV window (waitKey not pumping), arm pause >100 ms beyond expected (observer cost too high — would need to lower fps_limit).
 
-**Decisions (team, no code/hardware):**
-- Verify identity of git author `vico3740 <…>` (24 commits inside PR #3). Confirm whether this is an authorised collaborator and align on git config so future commits land under a known identity.
-- Discuss the unauthorised PR #3 merge with Yichang Chao. Branch protection on `master` (added 2026-04-27) prevents recurrence; the conversation is about process, not access.
 
 ---
 
@@ -102,7 +101,7 @@ Vertical-slice discipline: build one subsystem → simulate → validate → add
 | Quanser SDK (Windows) | ✅ installed | `C:\Program Files\Quanser\Quanser SDK\` |
 | **QUARC** | ❌ **NOT installed** — Simulink cannot talk to QArm natively | lab machine only |
 | Python deps | ✅ `quanser.hardware`, `quanser.devices`, `numpy 2.4`, `opencv 4.13` import cleanly | — |
-| MATLAB MCP server | ✅ v0.7.0, registered as `matlab` (stdio, nodesktop) | `C:\Users\Mugin\.claude\tools\matlab-mcp-core-server.exe` |
+| MATLAB MCP server | ✅ v0.7.0, registered as `matlab` (stdio, nodesktop) | `%USERPROFILE%\.claude\tools\matlab-mcp-core-server.exe` |
 
 **MCP tools available:** `detect_matlab_toolboxes`, `check_matlab_code`, `evaluate_matlab_code`, `run_matlab_file`, `run_matlab_test_file`. No Simulink-specific MCP tools — Simulink work is driven by writing `.m` build scripts and evaluating them.
 
@@ -240,7 +239,7 @@ Persistent QArmDriver facade. Default mode `0` (SIMULATE) simply echoes the comm
 
 ## 9. Known environmental issues (unrelated to project code)
 
-- **npm is corrupted** on the dev machine: `C:\Users\Mugin\AppData\Roaming\npm\node_modules\npm\...\@npmcli\fs\lib\common\` is missing `node.js`, so `npx -y ...` fails with `MODULE_NOT_FOUND`. This breaks npx-based MCP servers (`sequential-thinking`, `context7`). Fix plan: delete the broken user-prefix npm and reinstall via the bundled `C:\Program Files\nodejs\npm.cmd`. Pending user approval — **does not affect MATLAB/Python pipeline**, only Claude Code tooling.
+- **npm is corrupted** on the dev machine: `%APPDATA%\npm\node_modules\npm\...\@npmcli\fs\lib\common\` is missing `node.js`, so `npx -y ...` fails with `MODULE_NOT_FOUND`. This breaks npx-based MCP servers (`sequential-thinking`, `context7`). Fix plan: delete the broken user-prefix npm and reinstall via the bundled `C:\Program Files\nodejs\npm.cmd`. Pending user approval — **does not affect MATLAB/Python pipeline**, only Claude Code tooling.
 - `context7` MCP server is **not declared** in `~/.claude.json`; must be added after npm is repaired.
 - `sequential-thinking` is declared at user scope but cannot start until npm is repaired.
 
