@@ -272,7 +272,7 @@ Project complete. The repository is maintained as a reference implementation.
 ## Questions and Contact
 
 - Open a [GitHub issue](https://github.com/PieroJF/Robot-qarm-fruit-sorting/issues) for questions about the code or reproducing the setup.
-- Piero Flores: drsmugin@gmail.com, [LinkedIn](https://www.linkedin.com/in/piero-jesus-flores-lopez)
+- Piero Flores: pierojesus14@gmail.com, [LinkedIn](https://www.linkedin.com/in/piero-jesus-flores-lopez)
 
 ## License
 
